@@ -1,0 +1,10 @@
+<template name="selectedMessage">
+
+	<li class="{{selected}}">
+		<!-- check in curly braces keeps the box checked even after the page is refreshed so they remain in sync-->
+		<input type="checkbox" {{selected}}>
+		<input type="text" value="{{name}}" name="selectedMessage"> 
+		[<a href="#" class="delete-message">Delete</a>]
+	</li>
+
+</template>

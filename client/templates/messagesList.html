@@ -2,12 +2,14 @@
 <template name="messagesList">
 
 
-	<h5>Name Here (Mark Cuban)</h5>
+	<h5>Persons name (Mark Cuban)</h5>
 
+	{{> messagesCount}}
 	<ul>
 
 		{{#each messagesList}}
-			<li>{{name}}: {{message}}</li>	
+
+			<li><input type="checkbox" {{selected}}> {{name}}: {{message}} [<a href="#" class="delete-message">Delete</a>]</li>	
 		{{/each}}
 
 	</ul>

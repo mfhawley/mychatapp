@@ -11,6 +11,10 @@ Template.createChat.events({
 	    lastMessage: lastMessageVar,
 	    createdBy: currentUserId,
 	    createdAt: new Date()
+	    //call back function for auto direct to new chat created
+	    //results retrieve the results of the insert function (the chats id number only)
+	},function(error, results){
+		Router.go('messagesList', {_id: results});
 	});
 
 	//$('[user=userSearch]').val('');

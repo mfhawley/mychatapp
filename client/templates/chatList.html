@@ -8,7 +8,7 @@
 	<ul>
 
 		{{#each chatList}}
-			<li><a href="/chatList/{{_id}}">{{name}}: {{lastMessage}}</a></li>
+			<li><a href="{{pathFor route='messagesList'}}">{{name}}: {{lastMessage}}</a></li>
 		{{/each}}
 
 	</ul>
