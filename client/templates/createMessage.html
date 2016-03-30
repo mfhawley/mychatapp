@@ -1,0 +1,9 @@
+<template name="createMessage">
+    {{#if currentUser}}
+        <form>
+            <p><input type="text" name="userName" placeholder="This would be the name..."></p>
+            <p><input type="text" name="userMessage" placeholder="Type a Message..."></p>
+            <input type="submit" value="Send Message">
+        </form>
+    {{/if}}
+</template>

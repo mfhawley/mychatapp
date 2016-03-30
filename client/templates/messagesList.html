@@ -1,0 +1,23 @@
+<!-- private messages list page -->
+<template name="messagesList">
+
+
+	<h5>Name Here (Mark Cuban)</h5>
+
+	<ul>
+
+		{{#each messagesList}}
+			<li>{{name}}: {{message}}</li>	
+		{{/each}}
+
+	</ul>
+
+	{{> createMessage}}
+
+	<ul>
+		<li>Mark Cuban: where should we meet at</li>
+		<li>You: I are too drunk</li>
+		<li>Mark Cuban: Fuck off</li>
+	</ul>
+
+</template>

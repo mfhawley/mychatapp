@@ -1,0 +1,25 @@
+<!-- chats threads list page -->
+<template name="chatList">
+
+	<h2>Chats</h2>
+
+	{{> createChat}}
+
+	<ul>
+
+		{{#each chatList}}
+			<li><a href="/chatList/{{_id}}">{{name}}: {{lastMessage}}</a></li>
+		{{/each}}
+
+	</ul>
+
+
+	<ul>
+		<li>Mark Cuban: where should we meet at</li>
+		<li>You: I are too drunk</li>
+		<li>Tom Brady: Why am I so white?</li>
+		<li>Jessica Alba: I are sloot</li>
+
+	</ul>
+
+</template>

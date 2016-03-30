@@ -1,0 +1,24 @@
+<!-- feed page -->
+<template name="feedList">
+
+	<h2>Feed</h2>
+
+	{{> createFeed}}
+
+	<ul>
+		
+		{{#each feedList}}
+			<li>
+				{{content}} <br> <b>{{createdBy}}</b>  {{createdAt}}
+			</li>
+		{{/each}}
+
+	</ul>
+
+	<ul>
+		<li>Feed item 1 - Enimen: ef the POlice</li>
+		<li>Feed item 2 - Mark Cuban: Come to my Part</li>
+		<li>Feed item 3 - Vince Carter: I just won MVP. Wahoo!</li>
+	</ul>
+
+</template>

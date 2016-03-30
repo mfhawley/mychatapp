@@ -1,0 +1,10 @@
+<template name="createEvent">
+    {{#if currentUser}}
+        <form>
+        	<p>Event Cover Color: <input type="color" name="eventColor" value="#006aff"></p>
+            <p><input type="text" name="eventTitle" placeholder="Event Title"></p>
+            <p><input type="text" name="eventDescription" placeholder="Enter event description...."></p>
+            <input type="submit" value="Create Event">
+        </form>
+    {{/if}}
+</template>

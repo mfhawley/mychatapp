@@ -1,0 +1,18 @@
+<!-- this creates a header and footer for all pages -->
+<template name="main">
+
+	<h1>SilkChat</h1>
+
+	{{> navigation}}
+
+
+
+
+	<!-- this makes it so our template will actually apear between the header and footer -->
+	{{> yield}}
+
+	<hr />
+
+	<p> Copyright &copy; SilkChat, 2015-2016.</p>
+
+</template>

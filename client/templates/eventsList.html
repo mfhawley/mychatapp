@@ -1,0 +1,25 @@
+<!-- events page -->
+<template name="eventsList">
+
+	<h2>Events</h2>
+
+	{{> createEvent}}
+
+	<ul>
+		
+		{{#each eventsList}}
+			<div class="coverphoto" style="background-color:#006aff;"></div>
+			<li>
+				<b>{{title}}</b>: {{description}} <br> {{createdBy}}
+			</li>
+		{{/each}}
+
+	</ul>
+
+	<ul>
+		<li><h4>Manziel Rager</h4><p>Everybody come to get drunk as shit</p></li>
+		<li><h4>Tommys Bonanza</h4><p>Wine for everybody</p></li>
+		<li><h4>Grammys Red Carpet</h4><p>Come to some boring ass event</p></li>
+	</ul>
+
+</template>
