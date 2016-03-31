@@ -1,4 +1,4 @@
-Template.selectedMessage.events({
+Template.messagesList.events({
 	
 	'click .delete-message': function(event){
 		//prevent deafult prevent sthe link from behaving like a normal link, giving us total control
@@ -35,11 +35,14 @@ Template.selectedMessage.events({
 		console.log("You check or unchecked this box");
 		var documentId = this._id;
 		var isUnread = this.unread;
-		if(isUnread){
-			MessagesList.update({_id: documentId}, {$set: {unread: false}});
-			console.log("Messages marked as unread.");
+		if(isUnread == false){
+			var confirm = window.confirm ("Mark as unread?")
+			if(confirm){
+				MessagesList.update({_id: documentId}, {$set: {unread: true}});
+				console.log("Messages marked as unread.");
+			}
 		} else {
-			MessagesList.update({_id: documentId}, {$set: {unread: true}});
+			MessagesList.update({_id: documentId}, {$set: {unread: false}});
 			console.log("Messages marked as read.");
 		}
 

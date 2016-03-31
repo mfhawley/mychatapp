@@ -4,7 +4,7 @@ Template.createMessage.events({
     event.preventDefault();
     var userNameVar = event.target.userName.value;
    	var userMessageVar = event.target.userMessage.value;
-   	var currentUserId = Meteor.userId();
+   	var currentUserId = Meteor.user().emails[0].address;
    	//this grabs the id that the user is currentl viewing and storing it withing a currentchat variable
    	var currentList = this._id;
 
@@ -18,8 +18,8 @@ Template.createMessage.events({
 	    chatId: currentList
 	});
 
-	//$('[user=userSearch]').val('');
-	//$('[message=userMessage]').val('');
+	event.target.userName.value = "";
+	event.target.userMessage.value = "";
 
     //Meteor.call('insertMessageData', userSearchVar, userMessageVar);
   }

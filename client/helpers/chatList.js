@@ -1,7 +1,9 @@
 Template.chatList.helpers({
 
 	'chatList': function(){
-		return ChatList.find({}, {sort: {createdAt: 1}});
+		var currentUserId = Meteor.userId();
+
+		return ChatList.find({createdBy: currentUserId}, {sort: {createdAt: 1}});
 	}
 
 });

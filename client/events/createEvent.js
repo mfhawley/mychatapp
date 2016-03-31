@@ -7,7 +7,7 @@ Template.createEvent.events({
     var eventDescription = event.target.eventDescription.value;
    	var currentUserId = Meteor.user().emails[0].address;
 
-	ChatsList.insert({
+	EventsList.insert({
 		color: eventColor,
 	    title: eventTitle,
 	    description: eventDescription,
@@ -15,9 +15,9 @@ Template.createEvent.events({
 	    createdAt: new Date()
 	});
 
-	/*$('[color=eventColor]').val('#006aff');
-	$('[title=eventTitle]').val('');
-	$('[title=eventDescription]').val('');*/
+	//event.target.eventColor.value = #006aff;
+	event.target.eventTitle.value = "";
+	event.target.eventDescription.value = "";
 
     //Meteor.call('insertMessageData', userSearchVar, userMessageVar);
   }

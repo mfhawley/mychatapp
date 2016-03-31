@@ -13,4 +13,4 @@ Template.messagesCount.helpers({
 		//return messagesList.find({listId: currentList, unread: true}).count():
 
 	}
-})
+});

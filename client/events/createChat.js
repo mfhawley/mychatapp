@@ -3,8 +3,8 @@ Template.createChat.events({
   'submit form': function(event){
     event.preventDefault();
     var userSearchVar = event.target.userSearch.value;
-   	var lastMessageVar = event.target.lastMessage.value;
-   	var currentUserId = Meteor.userId();
+    var lastMessageVar = event.target.lastMessage.value;
+   	var currentUserId = Meteor.user().emails[0].address;
 
 	ChatList.insert({
 		name: userSearchVar,
@@ -17,8 +17,8 @@ Template.createChat.events({
 		Router.go('messagesList', {_id: results});
 	});
 
-	//$('[user=userSearch]').val('');
-	//$('[message=userMessage]').val('');
+	event.target.lastMessage.value = "";
+	event.target.lastMessage.value = "";
 
     //Meteor.call('insertMessageData', userSearchVar, userMessageVar);
   }

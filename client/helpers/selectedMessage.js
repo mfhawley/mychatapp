@@ -2,12 +2,12 @@
 //it is a helper for the selectedMessage template
 Template.selectedMessage.helpers({
 	
-	'selected':function(){
+	'checked':function(){
 
 		var isUnread = this.unread;
 		
 		if(isUnread){
-			return "selected";
+			return "checked";
 		} else {
 			return "";
 		}

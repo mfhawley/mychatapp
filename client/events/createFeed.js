@@ -10,5 +10,7 @@ Template.createFeed.events({
   	    createdBy: currentUserId,
   	    createdAt: new Date()
   	});
+
+    event.target.feedContent.value = "";
   }
 })
