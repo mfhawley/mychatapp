@@ -3,13 +3,15 @@ Template.createMessage.events({
   'submit form': function(event){
     event.preventDefault();
     var userNameVar = event.target.userName.value;
+    var userEmailVar = Meteor.user().emails[0].address;
    	var userMessageVar = event.target.userMessage.value;
-   	var currentUserId = Meteor.user().emails[0].address;
+   	var currentUserId = Meteor.userId();
    	//this grabs the id that the user is currentl viewing and storing it withing a currentchat variable
    	var currentList = this._id;
 
 	MessagesList.insert({
 		name: userNameVar,
+		email: userEmailVar,
 	    message: userMessageVar,
 	    unread: false,
 	    createdBy: currentUserId,

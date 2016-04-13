@@ -3,10 +3,12 @@ Template.createFeed.events({
     'submit form': function(event){
       event.preventDefault();
       var feedText = event.target.feedContent.value;
-     	var currentUserId = Meteor.user().emails[0].address;
+      var userEmailVar = Meteor.user().emails[0].address;
+     	var currentUserId = Meteor.userId();
 
   	FeedList.insert({
   		  content: feedText,
+        email: userEmailVar,
   	    createdBy: currentUserId,
   	    createdAt: new Date()
   	});

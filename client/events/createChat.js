@@ -4,11 +4,14 @@ Template.createChat.events({
     event.preventDefault();
     var userSearchVar = event.target.userSearch.value;
     var lastMessageVar = event.target.lastMessage.value;
-   	var currentUserId = Meteor.user().emails[0].address;
-
+   	var currentUserId = Meteor.userId();
+   	var userEmailVar = Meteor.user().emails[0].address;
+   	console.log("yo yo");
+   	
 	ChatList.insert({
 		name: userSearchVar,
 	    lastMessage: lastMessageVar,
+	    email: userEmailVar,
 	    createdBy: currentUserId,
 	    createdAt: new Date()
 	    //call back function for auto direct to new chat created
