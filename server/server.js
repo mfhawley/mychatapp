@@ -1,6 +1,6 @@
-/*if(Meteor.isServer){
+if(Meteor.isServer){
 
-	Meteor.methods({
+	/*Meteor.methods({
 	    'insertMessageData': function(userSearchVar){
 	      var currentUserId = Meteor.userId();
 	      MessagesList.insert({
@@ -9,5 +9,6 @@
 	          createdBy: currentUserId
 	      });
 	    }
-	});
-}*/
+	});*/
+
+}

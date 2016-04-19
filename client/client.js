@@ -41,12 +41,16 @@ if(Meteor.isClient){
 	Template.register.onRendered(function(){
 		var validator = $('.register').validate({
 			submitHandler: function(event){
+				var firstname= $('[name=firstname]').val();
+				var lastname= $('[name=lastname]').val();
 				var email= $('[name=email]').val();
 				var password = $('[name=password]').val();
 
 				//this send the info through the accounts password package 
 				//has a callback function for errors
 				Accounts.createUser({
+					firstname: firstname,
+					lsatname: lastname,
 					email: email,
 					password: password
 				}, function (error){
@@ -72,6 +76,10 @@ if(Meteor.isClient){
 	//this is used for the login and register template since they can share the same errors
 	$.validator.setDefaults({
 		rules: {
+			username: {
+				required: true,
+				maxlength: 12
+			},
 			email: {
 				required: true,
 				email: true
@@ -94,5 +102,8 @@ if(Meteor.isClient){
 			}
 		}
 	});
+
+	
+
 
 }
