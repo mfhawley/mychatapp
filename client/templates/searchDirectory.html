@@ -1,8 +1,17 @@
 <template name="searchDirectory">
     {{#if currentUser}}
-        <form>
-            <p><input type="text" name="directorySearch" placeholder="Search for a user..."></p>
-            <input type="submit" value="Search">
-        </form>
+
+      <form name="searchFormDirectory">
+      	<label for="searchQuery">Search:</label>
+      	<input type="text" class="searchQuery" id="searchQuery" Placeholder= "Search a User" value="">
+    	</form>
+
+      <button name = "selectPersonButton" class="selectPersonButton" id="selectPersonButton">
+        {{#each people}}
+            {{email}}
+        {{/each}}
+      </button>
+
     {{/if}}
+
 </template>

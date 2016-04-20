@@ -1,4 +1,4 @@
-Template.searchContacts.events({
+Template.searchDirectory.events({
   
   'keyup input.searchQuery': function (event) {
     Session.set("searchQuery", event.currentTarget.value);

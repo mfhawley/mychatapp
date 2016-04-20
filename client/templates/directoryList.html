@@ -1,12 +1,24 @@
+<!--directory page -->
+
 <template name="directoryList">
 	{{> searchDirectory}}
 
 
 
+	<ul>
+		
+		{{#each directoryList}}
+			<li>
+				{{firstname}} {{lastname}} &nbsp; &nbsp; &nbsp; &nbsp; Add+
+			</li>
+		{{/each}}
+
+	</ul>
 
 	<ul>
 		<li>Mark Cuban    Add+  </li>
 		<li>Bill Donahew    Add+ </li>
 		<li>Charlie Sheen     Add+ </li>
 	</ul>
+
 </template>

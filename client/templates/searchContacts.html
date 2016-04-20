@@ -2,16 +2,16 @@
 <template name="searchContacts">
     {{#if currentUser}}
 
-    <form name="searchForm">
-    	<label for="searchQuery">Search:</label>
-    	<input type="text" class="searchQuery" id="searchQuery" Placeholder= "Search a Name" value="">
-  	</form>
+      <form name="searchFormContacts">
+      	<label for="searchQuery">Search:</label>
+      	<input type="text" class="searchQuery" id="searchQuery" Placeholder= "Search a Contact" value="">
+    	</form>
 
-    <button name = "selectPersonButton" class="selectPersonButton" id="selectPersonButton">
-      {{#each people}}
-          {{email}}
-      {{/each}}
-    </button>
+      <button name = "selectPersonButton" class="selectPersonButton" id="selectPersonButton">
+        {{#each people}}
+            {{email}}
+        {{/each}}
+      </button>
 
 
     {{/if}}
