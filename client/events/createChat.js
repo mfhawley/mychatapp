@@ -28,15 +28,17 @@ Template.createChat.events({
 
 	//used for user search in capturing the input content
     'keyup input.userSearch': function (event) {
-      Session.set("search-query", event.currentTarget.value);
+      Session.set("searchQuery", event.currentTarget.value);
     },
 
     //used for user serach in settings the value of the input field
   	'click .selectPersonButton': function(event){
 	    event.preventDefault();
 	    var buttonValue = document.getElementById("selectPersonButton").innerHTML;
-	    //end part replaces the spaces in the name
-		document.getElementById("userSearch").value = buttonValue.replace(/\s+/g, '');
+		document.getElementById("searchQuery").value = buttonValue.replace(/\s+/g, '');
+
+    	//document.getElementById("selectPersonButton").innerHTML = "";
+
     }
 
   
