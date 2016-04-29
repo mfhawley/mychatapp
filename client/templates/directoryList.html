@@ -3,13 +3,11 @@
 <template name="directoryList">
 	{{> searchDirectory}}
 
-
-
 	<ul>
 		
 		{{#each directoryList}}
 			<li>
-				{{firstname}} {{lastname}} &nbsp; &nbsp; &nbsp; &nbsp; Add+
+				{{firstname}} {{lastname}} &nbsp; &nbsp; &nbsp; &nbsp; <button name="addFriend" class="addFriend">Add</button>
 			</li>
 		{{/each}}
 

@@ -2,14 +2,13 @@ Template.createChat.events({
   	//will trigger when the form inside the createMessage form tempalte is submitted
 	'submit form': function(event){
 	    event.preventDefault();
-	   	var recipientId = Session.get("searchQuery");
+	   	var recipient = Session.get("searchQuery");
 	    var lastMessageVar = event.target.lastMessage.value;
 	   	var currentUserId = Meteor.userId();
 	   	var userEmailVar = Meteor.user().emails[0].address;
 	   	
-	   	
 		ChatList.insert({
-			name: recipientId,
+			recipientEmail: recipient,
 		    lastMessage: lastMessageVar,
 		    email: userEmailVar,
 		    createdBy: currentUserId,

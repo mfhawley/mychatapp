@@ -1,5 +1,6 @@
 //this subscribes to the chatlist publish function
-Meteor.subscribe("chatList");
+//Meteor.subscribe("allUsers");
+Meteor.subscribe("chatsList");
 Meteor.subscribe("messagesList");
 Meteor.subscribe("eventsList");
 Meteor.subscribe("feedList");
@@ -59,7 +60,7 @@ Template.register.onRendered(function(){
 			//has a callback function for errors
 			Accounts.createUser({
 				firstname: firstname,
-				lsatname: lastname,
+				lastname: lastname,
 				email: email,
 				password: password
 			}, function (error){
@@ -73,6 +74,12 @@ Template.register.onRendered(function(){
 					}
 				} else {
 					//this sends them to the homepage after registering
+					DirectoryList.insert({
+						firstname: firstname,
+						lastname: lastname,
+						email: email,
+						directoryUserId: Meteor.userId()
+					});
 					Router.go("home");
 				}
 			});
